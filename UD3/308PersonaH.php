@@ -2,7 +2,7 @@
     declare(strict_types=1);
     class Persona {
         private static $sueldoTope=3333;
-
+        //dani
         public function __construct(
             private string $nombre, 
             private string $apellidos) {}
