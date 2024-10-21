@@ -52,8 +52,8 @@
 
         public static function toHtml(Persona $p): string{
             if($p instanceof Empleado){
-                $cadena = "<p>Nombre del empleado: " . $p->getNombreCompleto ."</p>";
-                $cadena .= "<p>Sueldo: " . $p->getSueldo ."</p>";
+                $cadena = "<p>Nombre del empleado: " . $p->getNombreCompleto() ."</p>";
+                $cadena .= "<p>Sueldo: " . $p->getSueldo() ."</p>";
 
                 $telefonos = $p->getTelefonos();
                 if(!empty($telefonos)){

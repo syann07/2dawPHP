@@ -19,10 +19,10 @@
         }
 
         public static function toHtml(Persona $p): string{
-            $cadena = "<p>Nombre del empleado: " . $emp->getNombreCompleto ."</p>";
-            $cadena .= "<p>Sueldo: " . $emp->getSueldo ."</p>";
+            $cadena = "<p>Nombre del empleado: " . $p->getNombreCompleto() ."</p>";
+            $cadena .= "<p>Sueldo: " . $p->getSueldo() ."</p>";
 
-            $telefonos = $emp->getTelefonos();
+            $telefonos = $p->getTelefonos();
             if(!empty($teñefonos)){
                 $cadena .= "<ol>";
                 foreach($telefonos as $telefono){
