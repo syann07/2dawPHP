@@ -2,12 +2,15 @@
     declare(strict_types=1);
     class Empleado extends Persona {
         private static $sueldoTope=3333;
+        private $telefonos = array();
 
         public function __construct(
-            private float $sueldo=1000,
-            private $telefonos = array()) {
+            private string $nombre,
+            private string $apellido,
+            private string $edad,
+            private float $sueldo=1000) {
                 parent::__construct($nombre, $apellido, $edad);
-            }
+        }
 
         public function getSueldo(): float {
             return $this->sueldo;

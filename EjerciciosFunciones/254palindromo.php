@@ -1,15 +1,11 @@
 <?php
 
-function palindromo($frase): boolean{
+function palindromo($frase): bool{
+    $frase = strtolower($frase);
     $nueva = str_replace (" ","",$frase);
-    $inversa = reverse($nueva);
+    $inversa = strrev($nueva);
 
-    if($nueva == $inversa){
-        return true;
-    }else{
-        return false;
-    }
+    return $nueva == $inversa;
 }
-
 
 ?>

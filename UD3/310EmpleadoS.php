@@ -2,19 +2,23 @@
     declare(strict_types=1);
     include_once("310Persona.php");
     class Empleado extends Persona {
-        private static $sueldoTope=3333;
+        private $sueldoTope;
+        private $telefonos = array();
 
         public function __construct(
-            private float $sueldo=1000,
-            private $telefonos = array()) {
+            private string $nombre,
+            private string $apellido,
+            private string $edad,
+            private float $sueldo=1000) {
                 parent::__construct($nombre, $apellidos, $edad);
+                $this->$sueldoTope = 3333;
             }
 
         public function getSueldo(): float {
             return $this->sueldo;
         }
         public function setSueldoTope(float $sueldoTope): void {
-            self::$sueldoTope = $sueldoTope;
+            $this->$sueldoTope = $sueldoTope;
         } 
 
         public function getSueldoTope(): float {
@@ -52,7 +56,7 @@
             $cadena .= "<p>Sueldo: " . $emp->getSueldo ."</p>";
 
             $telefonos = $emp->getTelefonos();
-            if(!empty($teñefonos)){
+            if(!empty($telefonos)){
                 $cadena .= "<ol>";
                 foreach($telefonos as $telefono){
                     $cadena .= "<li>";
@@ -66,8 +70,8 @@
             return $cadena;
         }
 
-        function public __toString(): string{
-            return "<p> Nombre:". parent::getNombreCompleto(). ". Sueldo: ". $this->getSueldo(). ". Telefonos: ". $this->listarTelefonos()."</p>"
+        public function __toString(): string {
+            return "<p> Nombre:". parent::getNombreCompleto(). ". Sueldo: ". $this->getSueldo(). ". Telefonos: ". $this->listarTelefonos()."</p>";
         }
     }
 

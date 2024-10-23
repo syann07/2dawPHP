@@ -7,8 +7,7 @@
         public function __construct(
             private float $sueldo=1000,
             private int $horasTrabajadas=0,
-            private float $precioHora=0;
-            ) {
+            private float $precioHora=0) {
                 parent::__construct($telefonos);
             }
         
@@ -70,8 +69,8 @@
             return $cadena;
         }
 
-        function public __toString(): string{
-            return "<p> Nombre:". parent::getNombreCompleto(). ". Sueldo: ". $this->getSueldo(). ". Telefonos: ". $this->listarTelefonos()."</p>"
+        public function  __toString(): string{
+            return "<p> Nombre:". parent::getNombreCompleto(). ". Sueldo: ". $this->getSueldo(). ". Telefonos: ". $this->listarTelefonos()."</p>";
         }
     }
 

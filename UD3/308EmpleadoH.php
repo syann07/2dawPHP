@@ -6,9 +6,10 @@
         private static $sueldoTope=3333;
 
         public function __construct(
-            super $nombre, $apellido,
             private float $sueldo=1000,
-            private $telefonos = array()) {}
+            private $telefonos = array()) {
+                parent::__construct($nombre, $apellido);
+            }
 
         public function getSueldo(): float {
             return $this->sueldo;

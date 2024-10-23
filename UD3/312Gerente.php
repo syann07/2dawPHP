@@ -1,5 +1,5 @@
 <?php
-declare("strict_types=1");
+declare(strict_types=1);
     class Gerente extends Trabajador{
         public function __construct(
             private float $salario=1300) {

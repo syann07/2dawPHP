@@ -2,7 +2,7 @@
     declare(strict_types=1);
     class Persona {
         private static $sueldoTope=3333;
-        //dani
+    
         public function __construct(
             private string $nombre, 
             private string $apellidos) {}
@@ -23,7 +23,7 @@
             $cadena .= "<p>Sueldo: " . $p->getSueldo() ."</p>";
 
             $telefonos = $p->getTelefonos();
-            if(!empty($teñefonos)){
+            if(!empty($telefonos)){
                 $cadena .= "<ol>";
                 foreach($telefonos as $telefono){
                     $cadena .= "<li>";
