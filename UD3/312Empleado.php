@@ -5,10 +5,13 @@
         private static $sueldoTope=3333;
 
         public function __construct(
+            string $nombre,
+            string $apellido,
+            int $edad,
             private float $sueldo=1000,
             private int $horasTrabajadas=0,
             private float $precioHora=0) {
-                parent::__construct($telefonos);
+                parent::__construct($nombre, $apellido,$edad, $telefonos);
             }
         
         public function calcularSueldo(): float{
