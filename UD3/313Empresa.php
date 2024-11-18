@@ -7,7 +7,7 @@ class Empresa {
     public function __construct($nombre, $direccion) {
         $this->nombre = $nombre;
         $this->direccion = $direccion;
-        $trabajadores = [];
+        $this->$trabajadores = [];
     }
 
     public function getNombre(): string {
@@ -21,6 +21,10 @@ class Empresa {
 
 
     public function getDireccion(): string {
+        return $this->trabajadores;
+    }
+    
+    public function getTrabajadores(): array {
         return $this->direccion;
     }
 
@@ -29,12 +33,13 @@ class Empresa {
         $this->direccion = $direccion;
     }
 
-    public function anyadirTrabajador(Trabajador $trabajador) {
+    public function anyadirTrabajador(Trabajador $trabajador): void {
         $this->trabajadores[] = $trabajador;
+        //$this->getTrabajadores()[] = $trabajador;
     }
 
     public function listarTrabajadoresHtml(): string {
-        $html = "<h2>Trabajadores en la empresa</h2>";
+        $html = "<h1>Trabajadores en la empresa</h1>";
         foreach ($this->trabajadores as $trabajador) {
             $html .= Trabajador::toHtml($trabajador);
         }

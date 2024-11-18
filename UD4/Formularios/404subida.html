@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subida de archivo</title>
+</head>
+<body>
+    <form enctype="multipart/form-data" action = "404subida.php" method = "POST">
+        <input type="file" name = "archivoEnviado" accept="image/*">     //con accept se puede elegir el tipo de archivo               
+        <br><br>                                                         //image/* acepta todos los tipos de imagen, imagen/jpg solo jpg                     
+        <label for="anchura">Dime la anchura del archivo: </label>
+        <input type="number" id="anchura" name="anchura" min="1" required>
+        <br><br>
+        <label for="anchura">Dime la altura del archivo: </label>
+        <input type="number" id="altura" name="altura" min="1" required>
+        <br><br>
+        <input type="submit" name="btnSubir" value="Subir">
+    </form>
+</body>
+</html>
